@@ -59,11 +59,6 @@ public class C01_BooksStorePathMethod {
         assertEquals(isbn_1,"9781449325862");
         assertEquals(isbn1,"9781449325862");
 
-        //['books'][0]['isbn']
-        //["books"][0]["isbn"]
-
-       // String  isbn_1_1 = response.path("['books[0]']['isbn']");
-       // System.out.println("isbn_1_1 = " + isbn_1_1);
 
         // And the first book publisher should be O'Reilly Media
         String firstPublisher = response.path("books[0].publisher");
