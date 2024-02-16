@@ -60,7 +60,14 @@ public class C03_KraftTechJsonPathMethod {
         assertEquals(jsonPath.get("[0].education.school[0]"),"School or Bootcamp");
         assertEquals(jsonPath.get("education[0].school[0]"),"School or Bootcamp");
 
-      List<List<Map<String,Object>>>  allEducations = jsonPath.getList("education");
+        //  [0]['education'][0]['school']
+        //  [0]["education"][0]["school"]
+
+        System.out.println(jsonPath.getString("[0]['education'][0]['school']"));
+        System.out.println(jsonPath.getString("[0][\"education\"][0][\"school\"]"));
+
+
+        List<List<Map<String,Object>>>  allEducations = jsonPath.getList("education");
         System.out.println("allEducations.get(0).get(0).get(\"school\") = " + allEducations.get(0).get(0).get("school"));
     }
 }

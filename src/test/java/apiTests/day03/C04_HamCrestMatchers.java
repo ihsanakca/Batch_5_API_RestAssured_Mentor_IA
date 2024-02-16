@@ -45,9 +45,9 @@ public class C04_HamCrestMatchers {
 
        given().accept(ContentType.JSON)
                 .pathParam("userId", 62)
-                .when()
+                .when().log().all()   //request logs
                 .get("/allusers/getbyid/{userId}")
-                .then()
+                .then().log().all()  //response logs
                 .statusCode(200)
                 .contentType("application/json; charset=UTF-8")
                .and()
